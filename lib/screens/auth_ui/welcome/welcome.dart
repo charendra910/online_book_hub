@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:onlinebookhub/constants/asset_images.dart';
+import 'package:onlinebookhub/widgets/primary_button/primary_button.dart';
+import 'package:onlinebookhub/widgets/top_titles/top_titles.dart';
 
 class Welcome extends StatelessWidget {
   const Welcome({super.key});
@@ -13,42 +15,8 @@ class Welcome extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(
-              height: 30,
-            ),
-            const Text(
-              "WELCOME",
-              style: TextStyle(
-                fontSize: 30,
-                color: Colors.red,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 35),
-              child: RichText(
-                text: TextSpan(
-                  children: [
-                    TextSpan(
-                      text: "Buy your book from ",
-                      style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.red),
-                    ),
-                    TextSpan(
-                      text: "BOOK-HUB",
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.red),
-                    ),
-                  ],
-                ),
-              ),
-            ),
+            const TopTitles(subtitle: "Buy your book from ", title: "WELCOME"),
+            
             SizedBox(
               height: 50,
             ),
@@ -105,32 +73,21 @@ class Welcome extends StatelessWidget {
               "--------OR--------",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             )),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
-            SizedBox(
-              height: 60,
-              width: 500,
-              child: ElevatedButton(
-                onPressed: () {},
-                child: Text("Login",
-                    style:
-                        TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
-              ),
-            ),
-            SizedBox(
+           PrimaryButton(
+            title:"Login",
+            onPressed: (){},
+           ),
+            const SizedBox(
               height: 20,
             ),
-            SizedBox(
-              height: 60,
-              width: 500,
-              child: ElevatedButton(
-                onPressed: () {},
-                child: Text("Sign Up",
-                    style:
-                        TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
-              ),
-            ),
+              PrimaryButton(
+            title:"Sign Up",
+            onPressed: (){},
+           ),
+          
           ],
         ),
       ),
